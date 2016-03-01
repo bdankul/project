@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Interactive Prototype 1</title>
+        
+        <!--Link to google font-->
+        <!--to change | replace with '%7c'-->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700%7CMontserrat' rel='stylesheet' type='text/css'>
+        
+        <!--Link to CSS-->
+        <link type="text/css" rel="stylesheet" href="main.css">
+        
+        
+        <!--Link to JS-->
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        
+        <!--Link to JS UI-->
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        
+        <!--link to custom JS-->
+        <script type="text/javascript" src="main.js"></script>
+    </head>
+    <body>
+        <figure class="clock"><img id="clock" src="images/clock.svg" width="150" height="150" alt="clock">
+        </figure>
+    
+    <figure class="calendar">
+    <img id="calendar" src="images/calendar.svg" width="195" height="200" alt="calendar placeholder"></figure>
+    
+    <figure class="note">
+    <img id="note" src="images/note.svg" width="275" height="200" alt="sticky note">
+    </figure>
+    
+    <form name="todo" id="todo" class="selectable">
+        <h2> TO-DO </h2>
+        <div>
+            <input type="checkbox" name="listItem" value="1"> Buy parking permit</div>
+        <div>
+            <input type="checkbox" name="listItem" value="2"> Apply for scholarship</div>
+        <div>
+            <input type="submit" value="+">            
+            <input type="text" name="newItem" value="do this too">
+        </div>
+        <img src="images/customIcon.jpeg" alt="customize icon" class="customIcon" height="30" width="30">
+        
+        <aside>
+          <form name="todoCustom" id="todoCustom">
+            <p>background color</p>
+              <input type="submit" value="OK">
+            <input type="color" name="todoColor" value="#ffffff">
+        </form>  
+        </aside>
+    </form>
+        <menu id="mainMenu">
+            <li><a href="#">help</a></li>
+            <li id="mmWidget"><a href="#">widget manager</a></li>
+            <li><a href="#">change background</a></li>
+            <li><a href="#">new project</a></li>
+        </menu>
+        <menu id="widgetManager">
+            <li>Widget Manager</li>
+            <li id="wmClock"><a href="#">clock</a></li>
+            <li>sticky note</li>
+            <li>picture frame</li>
+        </menu>
+    <footer>
+        <div>
+            <img src="images/menuIcon.png" alt="menu icon" height="40" width="40">
+        </div>
+        <h1>Student Name</h1>
+    </footer>
+        
+    </body>
+</html>

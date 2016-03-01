@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #c5dce3;
+    font-family: 'open sans condensed', sans-serif;
+}
+h2{
+    text-align: center;
+    font-family: 'open sans condensed',sans-serif;
+    font-weight: 700;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+    color: white;
+    /*border-bottom: 3px solid white;*/
+}
+
+img#clock {
+    position: absolute;
+    top: 30px;
+    left: 250px;
+}
+
+img#calendar {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    
+}
+img#note {
+    position: absolute;
+    bottom: 90px;
+    right: 390px;
+    -webkit-box-shadow: 2px 3px 8px 0px rgba(138,123,138,0.75);
+-moz-box-shadow: 2px 3px 8px 0px rgba(138,123,138,0.75);
+box-shadow: 2px 3px 8px 0px rgba(138,123,138,0.75);
+}
+form {
+    font-family: 'open sans condensed',sans-serif;
+}
+form#todo {
+    background-color: #503f3f;
+    padding: .6em;
+    width: 300px; 
+    height: 80%; 
+    position: fixed;
+    top: 30px;
+    right: 40px; 
+}
+form#todo div {
+    width: 100%;
+    list-style-type: none;
+    border-right: 4px solid #b6d3bb;
+    padding: .75em;
+    letter-spacing: 1.7px;
+    background-color: #ffffff;
+    display: block;     
+}
+form#todo div:active {
+    border-right: 4px solid #f0b665;
+}
+form img.customIcon {
+    position: relative;
+    top: -180px;
+    left: -41px;
+    border: 1px solid #3b3535;
+    visibility: hidden;
+}
+form aside {
+    width: 170px;
+    height: 100px;;
+    background-color: white;
+    padding: 5px;
+    position: relative;
+    top: -180px;;
+    left: -200px;
+    font-size: 13px;
+}
+input[type=checkbox] {
+    margin-right: 1em;
+}
+
+input[type="text"] {
+    font-family: 'open sans condensed', sans-serif;
+    padding-left: 5px;
+    letter-spacing: 1px;
+    width: 80%;   
+    border: none;
+    font-size: 1em;
+    letter-spacing: 1.7px;
+}
+input[type="text"]:focus,
+input[type="text"].focus{
+    outline: none;
+    border-bottom: 1px solid #ebfa75;
+}
+
+form#bkdColor {
+    width: 170px;
+    background-color: transparent;
+    padding: .5em 1em .5em 1em;
+    text-align: left;
+    line-height: 2.2em;
+    letter-spacing: .2px;
+    font-size: 12px;
+    float: left;  
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-family: 'open sans condensed', sans-serif;
+}
+footer h1 {
+    float: right;
+    margin: .5em 1em;
+    color: #806464;
+    font-family: 'montserrat', sans-serif;
+}
+
+footer div {
+    float: left;
+    background-color: white;
+    padding-top: 2px;
+    margin: 15px 10px;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+menu {
+    position: absolute;
+    bottom: 90px;
+    left: 10px;
+    list-style-type: none;
+    background-color: white;
+    line-height: 200%;
+}
+menu li {
+    border-bottom: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+menu li a:hover {
+    color: red;
+    letter-spacing: 0;
+}
+menu#widgetManager {
+    position: absolute;
+    left: 150px;
+}
+menu#widgetManager li:first-child {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+a:link, a:visited {
+    text-decoration: none;
+    color: #605f5f;
+}
+a:hover {
+    color: #ebfa75;
+    letter-spacing: 2px;
+}
+
+/* Hide menus and elements */
+figure.clock, menu{
+    visibility: hidden;
+}

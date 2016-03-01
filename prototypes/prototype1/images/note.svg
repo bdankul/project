@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="275px" height="200px" viewBox="0 0 275 200" enable-background="new 0 0 275 200" xml:space="preserve">
+<rect fill="#B3A2A2" width="275" height="200"/>
+<rect fill="#806464" width="275" height="16"/>
+<circle fill="#271A1A" cx="8.667" cy="7.667" r="4.667"/>
+<line fill="none" stroke="#593D36" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" x1="19" y1="8.5" x2="27.333" y2="8.5"/>
+<text transform="matrix(1 0 0 1 14 41)" font-family="'Montserrat-Light'" font-size="12">Jquery UI link</text>
+<text transform="matrix(1 0 0 1 14 50.5996)" font-family="'Montserrat-Light'" font-size="8">&lt;script src=&quot;http://code.jquery.com/ui/1.11.4/jquery-ui.js&quot;&gt;&lt;/script&gt;</text>
+<text transform="matrix(1 0 0 1 14 73.3994)" font-family="'Montserrat-Light'" font-size="11">- draggable</text>
+<text transform="matrix(1 0 0 1 14 86.5996)" font-family="'Montserrat-Light'" font-size="11" letter-spacing="30"> </text>
+<text transform="matrix(1 0 0 1 50 86.5996)" font-family="'Montserrat-Light'" font-size="11">- containment : “parent, window”</text>
+<text transform="matrix(1 0 0 1 14 99.7998)" font-family="'Montserrat-Light'" font-size="11" letter-spacing="30"> </text>
+<text transform="matrix(1 0 0 1 50 99.7998)" font-family="'Montserrat-Light'" font-size="11">- axis : “y,x”</text>
+</svg>
