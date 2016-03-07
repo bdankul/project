@@ -1,70 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Task Manager</title>
-        
-        <!--Link to google font-->
-        <!--to change | replace with '%7c'-->
-        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700%7cKarla:400,400italic,700' rel='stylesheet' type='text/css'>
-        
-        <!--Link to CSS-->
-        <link type="text/css" rel="stylesheet" href="main.css">
-        
-        <!--Link to JS-->
-        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-        
-        <!--Link to jQuery UI-->
-        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-        
-        <!--link to custom JS-->
-        <script type="text/javascript" src="js/main.js"></script>
-        
-        
-    </head>
-    <body>
 
-        <!-- MAIN FOOTER MENU BAR -->
-        <footer id="main">
-            <div class="menuIcon">=</div>
-            <div class="menuIcon">?</div>
+<head>
+    <meta charset="utf-8">
+    <title>Task Manager</title>
+
+    <!--Link to google font-->
+    <!--to change | replace with '%7c'-->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700%7cKarla:400,400italic,700' rel='stylesheet' type='text/css'>
+
+    <!--Link to CSS-->
+    <link type="text/css" rel="stylesheet" href="main.css">
+
+    <!--Link to JS-->
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+    <!--Link to jQuery UI-->
+   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" 
+href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+
+    <!--link to custom JS-->
+    <script type="text/javascript" src="js/main.js"></script>
+    
+    <!--Bootstrap for icon font-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+</head>
+
+<body>
+
+    <!-- WIDGETS -->
+
+    <section id="widgets">
+        
+        <article class="stickyNote">
+            <menu>
+                <div class="closeButton"></div>
+                <div class="minButton"></div>
+            </menu>
+            <p contenteditable="true">Jot down quick thoughts or anything you want to remember for later. Click to edit content.</p>
+        </article>
+        
+        <article class="todo">
+            <h4 contenteditable="true">TO-DO</h4>
+            <table>
+                <tr>
+                    <td><i class="fa fa-square"></i></td>
+                    <td contenteditable="true">List item</td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-square"></i></td>
+                    <td contenteditable="true">List item</td>
+                </tr>
+                <tr id="addTask">
+                    <td><i class="fa fa-plus-square-o"></i></td>
+                    <td><input type="text" name="newTask"></td>
+                </tr>
+            </table>
+        </article>
+        
+    </section>
+    
+    <!-- MAIN FOOTER MENU BAR -->
+    <footer>
+        <div class="menuIcon">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="menuIcon">
+            <i class="fa fa-plus"></i>
+        </div>
+
+        <h2 contenteditable="true">
+            <a href="#"><em>&#60;</em></a> 
+                Your Dashboard
+            <a href="#"><em>&#62;</em></a>
+        </h2>
+
+        <div id="userPic">
+            <img src="images/defaultPic.png" id="profilePic" alt="profile picture" height="50" width="50">
+        </div>
+    </footer>
+
+    <!-- MAIN MENUS -->
+    <menu id="main" class="menus boxStyle">
+        <ul>
+            <li><img id="taskHeaderMenu" src="images/taskHeader.svg" alt="Task Manager Header" width="130" height="50"></li>
+            <li><a href="mailto:bdank@ucdavis.edu"><i class="fa fa-comment-o fa-fw"></i>Contact Us</a></li>
+            <li><i class="fa fa-info fa-fw"></i>Help</li>
+        </ul>
+        <div class="mainMenuTRI"></div>
+    </menu>
+    <menu id="widgetManager" class="boxStyle menus">
+        <ul>
+            <li><strong>WIDGET</strong> MANAGER</li>
+            <li><i class="fa fa-clock-o fa-fw"></i> Clock</li>
+            <li><i class="fa fa-check-square-o fa-fw"></i>
+Checklist</li>
+            <li id="stickyNote"><i class="fa fa-sticky-note-o fa-fw"></i> Sticky Note</li>
+            <li><i class="fa fa-bookmark-o fa-fw"></i>
+ Quick Links</li>
             
-            <h2><a href="#"><em>&#60;</em></a> 
-                All Boards 
-                <a href="#"><em>&#62;</em></a></h2>
-            <div id="userPic">
-                <img src="images/defaultPic.png" id="profilePic" alt="profile picture" height="50" width="50">
-            </div>
-        </footer>
-        
-        <!-- MAIN MENUS -->
-        <menu id="main" class="menus boxStyle">
-            <ul>
-                <li>Edit Board</li>
-                <li>New Board</li>
-                <li>Widget Manager</li>
-            </ul>
-            <div class="mainMenuTRI"></div>
-        </menu>
-        <menu id="help" class="boxStyle menus" >
-            <ul>
-                <li><img id="taskHeaderMenu" src="images/taskHeader.svg" alt="Task Manager Header" width="130" height="50"></li>
-                <li><a href="mailto:bdank@ucdavis.edu">Contact Us</a></li>
-                <li>Help</li>
-            </ul>
-            <div class="mainMenuTRI"></div>
-        </menu>
-        
-        <!-- WIDGETS -->
-       
-        <section id="widgets">
-            <article class="stickyNote" id="stickyNote">
-                <menu>
-                    <div class="closeButton"></div>
-                    <div class="minButton"></div>
-                </menu>
-                <p contenteditable="true">Jot down quick thoughts or anything you want to remember for later. Click to edit content.</p>
-            </article>
-        </section>
-    </body>
+        </ul>
+        <div class="mainMenuTRI"></div>
+    </menu>
+
+</body>
+
 </html>

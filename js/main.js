@@ -22,15 +22,17 @@ $(document).ready(function(){
     
     // MAIN MENU
     
-    $('menu#main, menu#help').hide();
+    $('menu#main, menu#widgetManager').hide();
     
     $('footer div.menuIcon:first').click(
         function(){
-            $('menu#main').show();
+            $('menu#main').show()
+            $('menu#widgetManager').hide();
         });
     $('footer div.menuIcon:last').click(
         function(){
-            $('menu#help').show();
+            $('menu#widgetManager').show()
+            $('menu#main').hide();
         });
     
     // .MENUS mouseleave = hide menu
@@ -39,13 +41,31 @@ $(document).ready(function(){
             $(this).hide('700');
         });
 
-    console.log("js 2");
+    console.log("menus reading");
     
-    // WIDGETS
+    // STICKY NOTE
+    $('article.stickyNote').draggable({
+        cursor : 'pointer',
+        handle : 'menu',
+        containment : 'parent'
+    }).resizable({
+        autoHide : true,
+        minWidth : 250
+    });
     
-    $('article#stickyNote menu div.closeButton').click(
+    $('article.stickyNote menu div.closeButton').click(
         function(){
-            $('section#widgets article#stickNote').hide();
+            $('article.stickyNote').hide()
+            return false;
         });
-    console.log("sticky note read");
+    
+    console.log("sticky note reading");
+    
+    // WIDGET MENU CLICK SHOWS
+    
+    $('li#stickyNote').click(
+        function(){
+            $('article.stickyNote').show()
+            return false;
+        });
 }); //end ready
