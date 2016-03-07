@@ -61,6 +61,16 @@ $(document).ready(function(){
     
     console.log("sticky note reading");
     
+    // TODO LIST
+    $('article.todo').draggable({
+        handle : 'h4',
+        containment : 'parent'
+    });
+    $('article.todo tr').sortable({
+        axis : 'y',
+        containment: 'parent'
+    });
+    
     // WIDGET MENU CLICK SHOWS
     
     $('li#stickyNote').click(
