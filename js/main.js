@@ -44,6 +44,7 @@ $(document).ready(function(){
     console.log("menus reading");
     
     // STICKY NOTE
+    $('article.stickyNote').hide();
     $('article.stickyNote').draggable({
         cursor : 'pointer',
         handle : 'menu',
@@ -52,7 +53,7 @@ $(document).ready(function(){
         autoHide : true,
         minWidth : 250
     });
-    
+    // close button event
     $('article.stickyNote menu div.closeButton').click(
         function(){
             $('article.stickyNote').hide()
@@ -62,20 +63,82 @@ $(document).ready(function(){
     console.log("sticky note reading");
     
     // TODO LIST
+    $('article.todo').hide();
     $('article.todo').draggable({
         handle : 'h4',
         containment : 'parent'
     });
-    $('article.todo tr').sortable({
+    $('article.todo ul').sortable({
         axis : 'y',
         containment: 'parent'
     });
+    // close button event
+    $('article.todo menu div.closeButton').click(
+        function(){
+            $('article.todo').hide()
+            return false;
+        });
+    // add new task 
+    // click plus to show text input
+    $('#task').css('visibility','hidden');
+    $('article.todo li:last-child').click(
+        function(){
+            $('#task').css('visibility','visible');
+        });
+    // click done change li i class
+    $('article.todo i').click(
+        function(){
+            
+            var addTaskLine = document.getElementById("addTask");
+            
+            // apply css & class changes to next siblings except last
+            $(this).nextUntil(addTaskLine,"span").css('textDecoration','line-through')
+            $(this).removeClass().addClass('fa-li fa fa-check-square-o');
+        });
+    console.log("change icon done");
     
     // WIDGET MENU CLICK SHOWS
     
-    $('li#stickyNote').click(
+    $('li#stickyNoteLink').click(
         function(){
             $('article.stickyNote').show()
             return false;
         });
+    $('li#todoLink').click(
+        function(){
+            $('article.todo').show()
+            return false;
+        });
+    
+    // CLNDR.JS
+    $('#mini-clndr').draggable({
+        handle : 'div.month',
+        containment : 'window'
+    });
+    var currentMonth = moment().format('YYYY-MM');
+var nextMonth    = moment().add('month', 1).format('YYYY-MM');
+var events = [
+  { date: currentMonth + '-' + '10', title: 'Persian Kitten Auction', location: 'Center for Beautiful Cats' },
+  { date: currentMonth + '-' + '19', title: 'Cat Frisbee', location: 'Jefferson Park' },
+  { date: currentMonth + '-' + '23', title: 'Kitten Demonstration', location: 'Center for Beautiful Cats' },
+  { date: nextMonth + '-' + '07',    title: 'Small Cat Photo Session', location: 'Center for Cat Photography' }
+];
+
+$('#mini-clndr').clndr({
+  template: $('#calendar-template').html(),
+  events: events,
+  clickEvents: {
+    click: function(target) {
+      if(target.events.length) {
+        var daysContainer = $('#mini-clndr').find('.days-container');
+        daysContainer.toggleClass('show-events', true);
+        $('#mini-clndr').find('.x-button').click( function() {
+          daysContainer.toggleClass('show-events', false);
+        });
+      }
+    }
+  },
+  adjacentDaysChangeMonth: true
+});
+    
 }); //end ready
