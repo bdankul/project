@@ -65,7 +65,7 @@ $(document).ready(function(){
     // TODO LIST
     $('article.todo').hide();
     $('article.todo').draggable({
-        handle : 'h4',
+        handle : 'menu',
         containment : 'parent'
     });
     $('article.todo ul').sortable({
@@ -131,7 +131,10 @@ $(document).ready(function(){
 		    }
 		    timedUpdate();
     
-    $('article.clocks').hide();
+    $('article.clocks').hide()
+        .draggable({
+            containment : 'parent'
+    });
     
     // CLNDR.JS
     $('#mini-clndr').draggable({

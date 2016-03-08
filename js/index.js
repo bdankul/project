@@ -14,17 +14,6 @@ $(document).ready(function(){
         });
     
     
-    // PUT section#beta into variable to trigger 
-    // taskHeader animation
-    // CANT GET TO WORK!!!!****
-    
-    //var betaMessage = document.getElementById("beta")
-    
-    //if (betaMessage.is(:hidden)) {
-    //    $('img#taskHeader').fadeIn();
-    //}
-    
-    
     // Initial SIGN IN HIDE
     // SHOW WHEN CLICK userPic
     $('aside#signInBox').hide();
@@ -39,7 +28,22 @@ $(document).ready(function(){
             $('aside#signInBox').hide('700');
         });
 
+    console.log("sign in");
     
-    console.log("js 2");
+    // SIGN UP
+    $('div#signUp').click(
+        function(){
+            $('section#welcomeInfo').slideUp();
+            $(this).animate({
+                marginTop: 30,
+                width: 400,
+                height: 200,
+                borderRadius: 0,
+                paddingTop: 45,
+                fontSize: 25
+            })
+            .append('<form action="home.html">User Name<input type="text"><br>Password<input type="password"><br><input type="submit" value="Get Started" name="start"></form>')
+            .addClass('signUpBox').unbind('click');
+        });
     
 }); //end ready

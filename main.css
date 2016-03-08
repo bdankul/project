@@ -35,17 +35,18 @@ section#beta {
     background-color: #bdd4de;
     text-align: center;
     display: inline-block;
-    font-size: 2em;
+    font-size: 1.8em;
 }
 section#beta h3 {
-    margin: 90px 0 30px 0;
+    margin: 120px 0 30px 0;
     font-size: 2em;
     color: #fff;
     text-transform: uppercase;
 }
 section#beta p {
-    padding: 0 90px 0 90px;
+    padding: 0 140px 0 140px;
     color: #3f5765;
+    
 }
 
 div#betaOK, div#signUp {
@@ -102,13 +103,20 @@ section#welcomeInfo article h4 {
 div#signUp {
     display: block;
     margin: 0 auto;
-    font-size: 1.2em;
     width: 100px;
+    padding: 5px;
+    font-size: 1.2em;
 }
-div#signUp:hover {
+div#signUp span:hover {
     color: #bdd4de;
 }
-
+.signUpBox input{
+    margin: 5px;
+}
+.signUpBox form {
+    margin-top: 15px;
+    font-size: .7em;
+}
 /* SIGN IN */
 
 aside#signInBox {
@@ -282,7 +290,20 @@ menu.menus i {
 }
 /* BOARDS MENU */
 
-
+/* EDIT MENUS */
+.edit {
+    position: relative;
+    width: 150px;
+    height: auto;
+}
+.edit ul{
+    background-color: white;
+    list-style-type: none;
+}
+menu#editSticky {
+    left: -200px;
+    top: -80px;
+}
 /* WIDGETS */
 section#widgets {
     width: 100%;
@@ -298,8 +319,8 @@ article.stickyNote {
     width: 250px;
     min-height: 150px;
     background-color: #ffeeb7;
-    top: 30px;
-    right: 30%;
+    bottom: 70px;
+    left: 250px;
 }
 article.stickyNote p {
     padding: 10px;
@@ -350,6 +371,7 @@ article.todo {
 }
 article.todo menu {
     background-color: #967979;
+    cursor: move;
 }
 article.todo h4 {
     text-align: center;
@@ -358,7 +380,6 @@ article.todo h4 {
     padding-bottom: 10px;
     color: white;
     letter-spacing: 1px;
-    cursor: move;
 }
 article.todo ul {
     padding-bottom: 10px;
@@ -389,7 +410,10 @@ article.stickyNote p:focus, article.todo h4:focus {
 article.clocks {
     position: absolute;
     top: 30px;
-    left: 390px;
+    left: 370px;
+}
+article.clocks:hover {
+    cursor: move;
 }
 .hero-circle{
 				width:100px;
