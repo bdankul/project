@@ -41,6 +41,15 @@ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.
     <!-- WIDGETS -->
 
     <section id="widgets">
+        <article class="clocks">
+            <div class="hero-circle">
+			<div class="hero-face">
+				<div id="hour" class="hero-hour"></div>
+				<div id="minute" class="hero-minute"></div>
+				<div id="second" class="hero-second"></div>
+			</div>
+		</div>
+        </article>
         
         <article class="stickyNote">
             <menu>
@@ -62,6 +71,7 @@ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.
                 <li id="addTask"><i class="fa-li fa fa-plus-square-o"></i><input type="text" name="task" id="task"></li>
             </ul>
         </article>
+        
         
     </section>
     
@@ -116,7 +126,7 @@ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.
     <menu id="widgetManager" class="boxStyle menus">
         <ul>
             <li><strong>WIDGET</strong> MANAGER</li>
-            <li><i class="fa fa-clock-o fa-fw"></i> Clock</li>
+            <li id="clockLink"><i class="fa fa-clock-o fa-fw"></i> Clock</li>
             <li id="todoLink"><i class="fa fa-check-square-o fa-fw"></i>
 Checklist</li>
             <li id="stickyNoteLink"><i class="fa fa-sticky-note-o fa-fw"></i> Sticky Note</li>
