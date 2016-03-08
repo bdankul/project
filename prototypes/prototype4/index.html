@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Task Manager</title>
+        
+        <!--Link to google font-->
+        <!--to change | replace with '%7c'-->
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700%7cKarla:400,400italic,700' rel='stylesheet' type='text/css'>
+        
+        <!--Link to CSS-->
+        <link type="text/css" rel="stylesheet" href="main.css">
+        
+        <!--Link to JS-->
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        
+        <!--Link to jQuery UI-->
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+        
+        <!--link to custom JS-->
+        <script type="text/javascript" src="js/index.js"></script>
+        
+        
+    </head>
+    <body>
+        
+        <img id="taskHeader" src="images/taskHeader.svg" alt="Task Manager Header">
+        <section id="welcomeInfo">
+            <article>
+                <h4>Get it done,<br> your way</h4>
+                <p>Content about customization and personalization features. Dragging, sorting, resizing. Themes! </p>
+            </article>
+            <article>
+            <h4>Your one stop shop to organization</h4>
+                <p>Content about all the tools available to use like sticky notes, lists, quick links, etc. </p>
+            </article>
+            <article>
+            <h4>Make it yours and<br> have fun doing it</h4>
+                <p>Content about fun features to personalize boards and make it fun. Pictures, patterns, stickers! Yay! </p>
+            </article><br>
+        </section>
+        
+        <div id="signUp">
+                <span>Sign up</span>
+        </div>
+        
+        <!-- SIGN IN -->
+        <aside id="signInBox" class="boxStyle">
+            <form name="signIn" action="home.html">
+                User Name <br>
+                <input type="text" name="userName"><br>
+                Password <br>
+                <input type="password" name="password"><br>
+                <input type="submit" value="Sign in">
+            </form>
+            <div id="signInTRI"></div>
+        </aside>
+        
+        
+        <!-- MAIN FOOTER MENU BAR -->
+        <footer id="main">
+
+            <div id="userPic">
+                <img src="images/defaultPic.png" id="profilePic" alt="profile picture" height="50" width="50">
+            </div>
+        </footer>
+        
+        
+        
+        <!-- BETA MESSAGE -->
+        <section id="beta">
+            <h3>Welcome!</h3>
+            <p>This site is currently a beta version of a project still in development. Some links and features are not fully functional yet, but bare with us. In time, this should be a neat organizational tool you can use to stay on top of all your tasks and goals. Feel free to send any comments or suggestions our way using the link found in the help menu.</p>
+            <div id="betaOK">
+            OK</div>
+        </section>
+        
+    </body>
+</html>
