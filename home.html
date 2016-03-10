@@ -41,15 +41,7 @@ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.
     <!-- WIDGETS -->
 
     <section id="widgets">
-        <article class="clocks">
-            <div class="hero-circle">
-			<div class="hero-face">
-				<div id="hour" class="hero-hour"></div>
-				<div id="minute" class="hero-minute"></div>
-				<div id="second" class="hero-second"></div>
-			</div>
-		</div>
-        </article>
+        
         
         <article class="stickyNote">
             <menu>
@@ -67,14 +59,55 @@ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.
             </menu>
             <h4 contenteditable="true">TO-DO</h4>
             <ul class="fa-ul" id="todoList">
-                <li><i class="fa-li fa fa-square"></i><span>List Item</span></li>
-                <li><i class="fa-li fa fa-square"></i><span>List Item</span></li>
-                <li id="addTask"><i class="fa-li fa fa-plus-square-o"></i><input type="text" name="task" id="task"></li>
+                <li>
+                    <i class="fa-li fa fa-square"></i>
+                    <p contenteditable="true">List Item
+                    <i class="fa fa-trash-o"></i>
+                    </p>
+                    
+                </li>
+                <li>
+                    <i class="fa-li fa fa-square"></i>
+                    <p contenteditable="true">List Item
+                    <i class="fa fa-trash-o"></i></p>
+                </li>
+            </ul>
+            <form name="taskForm">
+            <ul class="fa-ul addTask">
+                <li id="addTask">
+                    <i class="fa-li fa fa-plus-square-o"></i>
+                    <input type="text" name="task" id="task" autocomplete="off">
+                    <input type="submit" value="Add" id="addButton">
+                </li>
+            </ul>
+            </form>
+        </article>
+        
+        <article class="bookmarks">
+            <menu>
+                <div class="closeButton"></div>
+                <div class="minButton"></div>
+            </menu>
+            <h4 contenteditable="true">bookmarks</h4>
+            <ul>
+                <li><a href="#">Name of Link</a></li>
             </ul>
         </article>
         
         
     </section>
+    
+    <!-- CLOCK -->
+    
+    <article class="clocks">
+            <div class="hero-circle">
+			<div class="hero-face">
+				<div id="hour" class="hero-hour"></div>
+				<div id="minute" class="hero-minute"></div>
+				<div id="second" class="hero-second"></div>
+			</div>
+		</div>
+        </article>
     
     <!-- CLNDR.JS -->
     

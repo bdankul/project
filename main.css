@@ -312,13 +312,32 @@ section#widgets {
 
 section#widgets article {
     position: absolute;
+    background-color: #a38888;
+}
+section#widgets article menu {
+    background-color: #967979;
+}
+section#widgets article h4 {
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+section#widgets article a:hover {
+    color: #bdd4de;
+}
+
+h4:focus {
+    outline: none;
 }
 
 /* STICKY NOTE */
 article.stickyNote {
     width: 250px;
     min-height: 150px;
-    background-color: #ffeeb7;
     bottom: 70px;
     left: 250px;
 }
@@ -363,30 +382,23 @@ article menu div:hover {
 
 /* TODO LIST */
 article.todo {
-    background-color: #a38888;
-    width: 280px;
+    width: 300px;
     height: auto;
     right: 30px;
     top: 30px;    
 }
 article.todo menu {
-    background-color: #967979;
     cursor: move;
 }
-article.todo h4 {
-    text-align: center;
-    font-size: 1.5em;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    color: white;
-    letter-spacing: 1px;
-}
+
 article.todo ul {
-    padding-bottom: 10px;
     padding-left: 10px;
 }
+article.todo ul:last-child {
+    padding-bottom: 10px;
+}
 article.todo li {
-    cursor: ns-resize;
+    /*cursor: ns-resize;*/
     margin: 15px;
     padding-left: 15px;
 }
@@ -398,8 +410,37 @@ article.todo i:hover {
     cursor: pointer;
 }
 article.todo input[type=text] {
-    width: 85%;
+    width: 75%;
+    padding: 2.5px;
 }
+article.todo input[type=submit] {
+    border: 1px solid white;
+    margin-top: -1.5px;
+    background-color: transparent;
+    text-transform: uppercase;
+    color: white;
+}
+article.todo p i {
+    font-size: 80%; 
+    margin-left: 5px;
+    color: black;
+}
+
+/* BOOKMARKS */
+
+article.bookmarks {
+    width: 300px;
+    height: 150px;
+    top: 50%;
+    left: 40%;
+}
+article.bookmarks ul {
+    list-style-type: none;
+}
+article.bookmarks li {
+    padding: 5px 5px 5px 15px;
+}
+/* DRKBLUE:2b3a42 MEDBLUE:3f5765 LBLUE:bdd4de ORANGE:ff530d */
 
 /* CONTENTEDITABLE FOCUS NONE*/
 
@@ -612,7 +653,7 @@ article.clocks:hover {
   color: white;
 }
 
-/* DRKBLUE:2b3a42 MEDBLUE:3f5765 LBLUE:bdd4de ORANGE:ff530d */
+
 
 /* GOTHAM FONT */
 @font-face {

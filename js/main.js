@@ -62,9 +62,8 @@ $(document).ready(function(){
     
     console.log("sticky note reading");
     
-    // TODO LIST
-    $('article.todo').hide();
-    $('article.todo').draggable({
+    // TODO LIST 
+    $('article.todo, article.bookmarks').draggable({
         handle : 'menu',
         containment : 'parent'
     });
@@ -80,21 +79,56 @@ $(document).ready(function(){
         });
     // add new task 
     // click plus to show text input
-    $('#task').css('visibility','hidden');
-    $('article.todo li:last-child').click(
+    $('#task, #addButton').css('visibility','hidden');
+    $('article.todo ul.addTask i').click(
         function(){
-            $('#task').css('visibility','visible');
+            $('#task, #addButton').css('visibility','visible');
         });
+    // add button prepend
+    document.taskForm.onsubmit = newTask;
+    
+    function newTask() {
+        var userTask = document.taskForm.task.value;
+        
+        if(userTask === "") {
+            event.preventDefault();
+        } else {
+            $('article.todo ul#todoList').prepend('<li><i class="fa-li fa fa-square"></i><p contenteditable="true">' + userTask + '<i class="fa fa-trash-o"></i></p></li>').bind();
+            
+            task.value = "";
+        }
+        return false;
+    }
+    
     // click done change li i class
-    $('article.todo i').click(
+    $('article.todo ul#todoList i.fa-square').click(
         function(){
-            
-            var addTaskLine = document.getElementById("addTask");
-            
             // apply css & class changes to next siblings except last
-            $(this).nextUntil(addTaskLine,"span").css('textDecoration','line-through')
-            $(this).removeClass().addClass('fa-li fa fa-check-square-o');
+            $(this).removeClass().addClass('fa-li fa fa-check-square-o').next().css('textDecoration','line-through');
+            return false;
+            
         });
+    
+    
+    // Trash Icon events
+    // hover li p shows icon
+    $('article.todo p i').css('visibility','hidden');
+    $('article.todo p').mouseover(
+        function(){
+            $(this).find('i').css('visibility','visible');
+        });
+    $('article.todo p').mouseleave(
+        function(){
+            $(this).find('i').css('visibility','hidden');
+        });
+    // initial hide
+    // click trash icon delete li
+    $('article.todo p i').click(
+        function(){
+            $(this).parent().parent().remove();
+        });
+        // ??? above doesnt remove newly added li items
+    
     console.log("change icon done");
     
     // WIDGET MENU CLICK SHOWS
