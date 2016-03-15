@@ -5,13 +5,13 @@
 * {margin: 0; padding: 0;}
 
 body {
-    background-color: #fff;
+    background-color: #ffffff;
     font-family: 'karla', sans-serif;
 }
 
 a:link, a:visited {
     text-decoration: none;
-    color: #333;
+    color: black;
 }
 a:hover {
     color: #ff530d;
@@ -200,13 +200,13 @@ footer i {
 }
  /* BOARDS CENTER IN FOOTER */
 footer h2 {
-    font-family: 'karla', sans-serif;
+    font-family: 'gotham_bookregular', sans-serif;
     color: white;
     letter-spacing: 1px; 
     display: inline-block;
-    text-transform: uppercase;
-    font-size: 1.4em;
+    font-size: 1.5em;
     margin-top: 3px;
+    
 }
 footer h2:focus {
     outline: none;
@@ -290,20 +290,6 @@ menu.menus i {
 }
 /* BOARDS MENU */
 
-/* EDIT MENUS */
-.edit {
-    position: relative;
-    width: 150px;
-    height: auto;
-}
-.edit ul{
-    background-color: white;
-    list-style-type: none;
-}
-menu#editSticky {
-    left: -200px;
-    top: -80px;
-}
 /* WIDGETS */
 section#widgets {
     width: 100%;
@@ -312,10 +298,10 @@ section#widgets {
 
 section#widgets article {
     position: absolute;
-    background-color: #a38888;
+    
 }
 section#widgets article menu {
-    background-color: #967979;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 section#widgets article h4 {
     text-align: center;
@@ -333,28 +319,9 @@ section#widgets article a:hover {
 h4:focus {
     outline: none;
 }
-
-/* STICKY NOTE */
-article.stickyNote {
-    width: 250px;
-    min-height: 150px;
-    bottom: 70px;
-    left: 250px;
-}
-article.stickyNote p {
-    padding: 10px;
-    font-size: .9em;
-}
-
 article menu {
     width: 100%;
     height: 15px;  
-}
-article.stickyNote menu {
-    background-color: #ffe797;
-}
-article.stickyNote menu:hover {
-    cursor: move;
 }
 div.closeButton {
     width: 9px;
@@ -380,27 +347,47 @@ article menu div:hover {
     cursor: pointer;
 }
 
+.visible {
+    visibility: visible;
+}
+/* STICKY NOTE */
+article.stickyNote {
+    width: 250px;
+    min-height: 150px;
+    top: 30px;
+    right: 350px;
+    background-color: #ffe797;
+}
+article.stickyNote p {
+    padding: 10px;
+    font-size: .9em;
+}
+
+article.stickyNote menu:hover {
+    cursor: move;
+}
 /* TODO LIST */
 article.todo {
     width: 300px;
     height: auto;
     right: 30px;
-    top: 30px;    
+    top: 30px; 
+    background-color: #3f5765;
 }
 article.todo menu {
     cursor: move;
 }
 
-article.todo ul {
+article.todo ul.fa-ul {
     padding-left: 10px;
 }
-article.todo ul:last-child {
+article.todo ul.addTask {
     padding-bottom: 10px;
 }
-article.todo li {
-    /*cursor: ns-resize;*/
+article.todo ul.fa-ul li {
+    cursor: ns-resize;
     margin: 15px;
-    padding-left: 15px;
+    padding-left: 10px;
 }
 article.todo i {
     color: white;
@@ -409,38 +396,127 @@ article.todo i {
 article.todo i:hover {
     cursor: pointer;
 }
-article.todo input[type=text] {
-    width: 75%;
-    padding: 2.5px;
+
+article.todo p i {
+    font-size: 80%; 
+    margin-left: 5px;
+    color: black;
+    visibility: hidden;
 }
-article.todo input[type=submit] {
+article.todo input[type=text]{
+    width: 75%;
+    padding: 2.4px;
+}
+
+article.todo input[type=submit],article.bookmarks input[type=submit] {
     border: 1px solid white;
     margin-top: -1.5px;
     background-color: transparent;
     text-transform: uppercase;
     color: white;
 }
-article.todo p i {
-    font-size: 80%; 
-    margin-left: 5px;
-    color: black;
-}
-
 /* BOOKMARKS */
 
 article.bookmarks {
     width: 300px;
-    height: 150px;
-    top: 50%;
-    left: 40%;
+    min-height: 150px;
+    bottom: 70px;
+    left: 400px;
+    padding-bottom: 15px;
+    background-color: #a38888;
 }
 article.bookmarks ul {
+    padding-left: 20px;
+    margin-right: 20px;
+}
+article.bookmarks ul.links {
+    margin-top: 10px;
+}
+article.bookmarks ul.addLink {
+    padding-bottom: 10px;
+    color: white;
+    font-size: .9em;
+}
+article.bookmarks ul.fa-ul li {
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+article.bookmarks i {
+    margin-right: 5px;
+    color: white;
+}
+
+article.bookmarks input[type=text] {
+    margin-bottom: 10px;
+    margin-left: 5px;
+    padding: 2.4px;
+}
+article.bookmarks i.fa-plus-square-o {
+    padding-left: 1px;
+    cursor: pointer;
+}
+ul#customBookmark {
+    position: absolute;
+    left: -200px;
+    top: 0px;
+    width: 160px;
     list-style-type: none;
+    padding: 0px;
 }
-article.bookmarks li {
-    padding: 5px 5px 5px 15px;
+.custom li {
+    border-bottom: 3px solid #2b3a42;
+    padding: 10px 5px 10px 15px;
 }
+.custom li:last-child {
+    border-bottom: none;
+}
+.custom select, .custom input {
+    float: right;
+    margin-top: 1px;
+    margin-right: 5px;
+}
+.custom input[type=color] {
+    margin-top: -2px;
+}
+
+.editMenuTRI {
+    position: absolute;
+    left: -35px;
+    top: 10px;
+    width: 0; 
+	height: 0; 
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 20px solid #2b3a42;
+}
+
+form[name=bookmarkBKD] input[type=submit],
+form[name=todoBKD] input[type=submit] {
+    border: 1px solid #2b3a42;
+    background-color: transparent;
+    text-transform: uppercase;
+    color: black;
+    position: relative;
+    left: -23px;
+    margin-bottom: 8px;
+}
+
+ul#customTodo {
+    position: absolute;
+    left: -200px;
+    top: 0px;
+    width: 160px;
+    list-style-type: none;
+    padding: 0px;
+}
+
 /* DRKBLUE:2b3a42 MEDBLUE:3f5765 LBLUE:bdd4de ORANGE:ff530d */
+
+#overview {
+    position: absolute;
+    top: 0px;
+    left: 15px;
+}
 
 /* CONTENTEDITABLE FOCUS NONE*/
 
@@ -456,12 +532,14 @@ article.clocks {
 article.clocks:hover {
     cursor: move;
 }
+
 .hero-circle{
 				width:100px;
 				height:100px;
 				position:relative;
 				border:8px solid #967979;
 				border-radius:50%;
+                background-color: white;
 			}
 			.hero-face{
 				width:100%;
@@ -535,17 +613,14 @@ article.clocks:hover {
 #mini-clndr {
   font-family: 'karla', Helvetica, Arial;
   margin: 0 auto;
-  width: 324px;
+  width: 310px;
   height: auto;
-    position:absolute;
-    top: 30px;
-    left: 30px;
 }
 #mini-clndr .clndr {
   /*overflow-x: hidden;*/
   overflow-y: visible;
-    height: 238px;
-  border-bottom: 7px solid #967979;
+    height: 234px;
+  border-bottom: 1px solid #967979;
 }
 #mini-clndr .clndr .controls {
   background-color: #967979;
@@ -582,7 +657,7 @@ article.clocks:hover {
     cursor: move;
 }
 #mini-clndr .clndr .controls .month {
-  width: 70%;
+  width: 67%;
   padding-top: 5px;
   padding-bottom: 5px;
   display: inline-block;
@@ -594,7 +669,7 @@ article.clocks:hover {
 #mini-clndr .clndr .days-container {
   position: relative;
   width: 100%;
-  height: 186px;
+  height: 200px;
   display: inline-block;
 }
 #mini-clndr .clndr .days-container .days {
@@ -609,10 +684,10 @@ article.clocks:hover {
 }
 #mini-clndr .clndr .days-container .days .day,
 #mini-clndr .clndr .days-container .days .empty {
-  width: 45px;
+  width: 40px;
   display: inline-block;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   font-size: 1em;
   text-align: center;
   color: #212121;
@@ -647,14 +722,88 @@ article.clocks:hover {
   padding-bottom: 5px;
 }
 #mini-clndr .clndr .days-container .days .headers .day-header {
-  width: 46px;
+  width: 40.5px;
   display: inline-block;
   text-align: center;
   color: white;
 }
+div#calWrap {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 310px;
+    background-color: #a38888;
+}
+div#clickedEvent p{
+    padding: 10px;
+    line-height: 155%;
+}
+div#clickedEvent h5 {
+    font-size: 1.2em;
+    padding-left: 10px;
+    color: white;
+}
+div#overview {
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: auto;
+}
+#today, #tomorrow, #thisweek {
+    padding: 10px;
+}
+div#overview h3 {
+    padding: 10px 10px 10px 20px;
+    background-color: rgba(100, 0, 0, 0.1);
+    color: white;
+    
+}
+div#overview li {
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+div#overview i {
+    color: white;
+}
+div#overview h3 i {
+    float: right;
+    padding-right: 10px;
+}
 
-
-
+div#overview table {
+    margin-left: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+div#overview td {
+    padding-top: 5px;
+}
+div#overview td:nth-child(2) {
+    padding-left: 10px;
+}
+div#overview td:first-child {
+    font-weight: 600;
+}
+div#overview tr.allDay td{
+    padding-bottom: 10px;
+    font-weight: 400;
+}
+div#overview tr.allDay i {
+    padding-right: 5px;
+    color: black;
+}
+div#tomorrow table {
+    margin-left: 10px;
+}
+div#thisweek table {
+    margin-left: -25px;
+}
+div#thisweek td {
+    padding-bottom: 5px;
+}
+div#thisweek td:first-child {
+    vertical-align: text-top;
+}
 /* GOTHAM FONT */
 @font-face {
     font-family: 'gotham_blackregular';

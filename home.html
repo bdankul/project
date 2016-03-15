@@ -16,19 +16,18 @@
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 
     <!--Link to jQuery UI-->
-   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <link rel="stylesheet" type="text/css" 
-href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css" />
 
     <!--link to custom JS-->
     <script type="text/javascript" src="js/main.js"></script>
-    
+
     <!--Bootstrap for icon font-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!--link to moment.js-->
     <script type="text/javascript" src="js/moment.js"></script>
-    
+
     <!--link to underscore.js-->
     <script type="text/javascript" src="js/underscore.js"></script>
 
@@ -41,17 +40,17 @@ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.
     <!-- WIDGETS -->
 
     <section id="widgets">
-        
-        
+
+
         <article class="stickyNote">
             <menu>
                 <div class="closeButton"></div>
                 <div class="minButton"></div>
             </menu>
             <p contenteditable="true">Jot down quick thoughts or anything you want to remember for later. Click to edit content.</p>
-            
+
         </article>
-        
+
         <article class="todo">
             <menu>
                 <div class="closeButton"></div>
@@ -61,73 +60,228 @@ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.
             <ul class="fa-ul" id="todoList">
                 <li>
                     <i class="fa-li fa fa-square"></i>
-                    <p contenteditable="true">List Item
-                    <i class="fa fa-trash-o"></i>
+                    <p contenteditable="true">Finish Project
+                        <i class="fa fa-trash-o"></i>
                     </p>
-                    
+
                 </li>
                 <li>
                     <i class="fa-li fa fa-square"></i>
-                    <p contenteditable="true">List Item
-                    <i class="fa fa-trash-o"></i></p>
+                    <p contenteditable="true">Have a great day
+                        <i class="fa fa-trash-o"></i></p>
                 </li>
             </ul>
             <form name="taskForm">
-            <ul class="fa-ul addTask">
-                <li id="addTask">
-                    <i class="fa-li fa fa-plus-square-o"></i>
-                    <input type="text" name="task" id="task" autocomplete="off">
-                    <input type="submit" value="Add" id="addButton">
-                </li>
-            </ul>
+                <ul class="fa-ul addTask">
+                    <li id="addTask">
+                        <i class="fa-li fa fa-plus-square-o"></i>
+                        <input type="text" name="task" id="task" autocomplete="off">
+                        <input type="submit" value="Add" id="addButton">
+                    </li>
+                </ul>
             </form>
+
+            <!-- todo Edit Menu -->
+            <div id="editTodoWrap">
+                <form name="todoBKD">
+                    <ul class="custom boxStyle" id="customTodo">
+                        <li>Color
+                            <input type="color" name="todoBKDcolor" value="#ffffff">
+                        </li>
+                        <li>Font
+                            <select id="todoFont">
+                                <option value="karla">Karla</option>
+                                <option value="roboto">Roboto</option>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="submit" value="make changes">
+                        </li>
+
+                    </ul>
+                </form>
+                <div class="editMenuTRI"></div>
+            </div>
         </article>
-        
+
         <article class="bookmarks">
             <menu>
                 <div class="closeButton"></div>
                 <div class="minButton"></div>
             </menu>
             <h4 contenteditable="true">bookmarks</h4>
-            <ul>
-                <li><a href="#">Name of Link</a></li>
+            <ul class="fa-ul links">
+                <li>
+                    <i class="fa-li fa fa-bookmark-o fa-fw"></i>
+                    <a href="#" target="_blank">Smartsite</a>
+                </li>
+                <li>
+                    <i class="fa-li fa fa-bookmark-o fa-fw"></i>
+                    <a href="#" target="_blank">Google Docs</a>
+                </li>
             </ul>
+
+            <ul class="fa-ul addLink">
+                <li id="addLink">
+                    <i class="fa-li fa fa-plus-square-o"></i>
+                    <form name="linksForm" id="linksForm">
+                        Link
+                        <input type="text" name="link" id="link" autocomplete="off">
+                        <br> Title
+                        <input type="text" name="title" id="title" autocomplete="off">
+                        <input type="submit" value="Add" id="linkAddButton">
+                    </form>
+                </li>
+            </ul>
+
+            <!-- Bookmark Edit Menu -->
+            <div id="editBookmarkWrap">
+                <form name="bookmarkBKD">
+                    <ul class="custom boxStyle" id="customBookmark">
+
+                        <li>Color
+                            <input type="color" name="bookmarkBKDcolor" value="#ffffff">
+                        </li>
+                        <li>Font
+                            <select id="bookMarkColor">
+                                <option value="karla">Karla</option>
+                                <option value="roboto">Roboto</option>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="submit" value="make changes">
+                        </li>
+
+                    </ul>
+                </form>
+                <div class="editMenuTRI"></div>
+            </div>
         </article>
-        
-        
+
     </section>
-    
+
+
+
     <!-- CLOCK -->
-    
+
     <article class="clocks">
-            <div class="hero-circle">
-			<div class="hero-face">
-				<div id="hour" class="hero-hour"></div>
-				<div id="minute" class="hero-minute"></div>
-				<div id="second" class="hero-second"></div>
-			</div>
-		</div>
-        </article>
-    
+        <div class="hero-circle">
+            <div class="hero-face">
+                <div id="hour" class="hero-hour"></div>
+                <div id="minute" class="hero-minute"></div>
+                <div id="second" class="hero-second"></div>
+            </div>
+        </div>
+    </article>
+
     <!-- CLNDR.JS -->
-    
-    <div id="mini-clndr"></div>
+    <div id="calWrap">
+        <div id="mini-clndr"></div>
 
-<script id="calendar-template" type="text/template">
-  <div class="controls">
-    <div class="clndr-previous-button">&lsaquo;</div><div class="month"><%= month %></div><div class="clndr-next-button">&rsaquo;</div>
-  </div>
+        <script id="calendar-template" type="text/template">
+            <div class="controls">
+                <div class="clndr-previous-button">&lsaquo;</div>
+                <div class="month">
+                    <%= month %>
+                </div>
+                <div class="clndr-next-button">&rsaquo;</div>
+            </div>
 
-  <div class="days-container">
-    <div class="days">
-      <div class="headers">
-        <% _.each(daysOfTheWeek, function(day) { %><div class="day-header"><%= day %></div><% }); %>
-      </div>
-      <% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div><% }); %>
+            <div class="days-container">
+                <div class="days">
+                    <div class="headers">
+                        <% _.each(daysOfTheWeek, function(day) { %>
+                            <div class="day-header">
+                                <%= day %>
+                            </div>
+                            <% }); %>
+                    </div>
+                    <% _.each(days, function(day) { %>
+                        <div class="<%= day.classes %>" id="<%= day.id %>">
+                            <%= day.day %>
+                        </div>
+                        <% }); %>
+                </div>
+            </div>
+        </script>
+        <div id="overview">
+            <div id="clickedEvent">
+                <h3>March 23</h3>
+                <table>
+                    <tr class="allDay">
+                        <td colspan="2">
+                        <i class="fa fa-gift"></i>
+                        Myra's Birthday
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1:30pm</td>
+                        <td>Dentist Appointment</td>
+                    </tr>
+                    <tr>
+                        <td>6:00pm</td>
+                        <td>Dinner with Mom</td>
+                    </tr>
+                </table>
+            </div>
+            <h3>
+                Today
+                <i class="fa fa-minus"></i>
+            </h3>
+            <div id="today">
+                <ul class="fa-ul">
+                    <li>
+                        <i class="fa-li fa fa-exclamation-circle"></i> Final Project Presentation
+                    </li>
+                    <li>
+                        <i class="fa-li fa fa-exclamation-circle"></i> Upload to Github
+                    </li>
+                </ul>
+            </div>
+            <h3>Tomorrow<i class="fa fa-minus"></i>
+</h3>
+            <div id="tomorrow">
+                <ul>
+                <table>
+                    <tr>
+                        <td>8:00am</td>
+                        <td>UWP Final</td>
+                    </tr>
+                    <tr>
+                        <td>2:00pm</td>
+                        <td>Drive home</td>
+                    </tr>
+                </table>
+                <ul class="fa-ul">
+                    <li>
+                        <i class="fa-li fa fa-circle-thin"></i> Pack for spring break trip
+                    </li>
+                </ul>
+        </div>
+            <h3>This Week<i class="fa fa-minus"></i>
+</h3>
+            <div id="thisweek">
+                <ul class="fa-ul">
+                    <table>
+                    <tr>
+                        <td>WED</td>
+                        <td>UWP Final<br>
+                            Drive Home</td>
+                    </tr>
+                    <tr>
+                        <td>THUR</td>
+                        <td>Santa Monica Beach<br>
+                        Dinner w/ Myra</td>
+                    </tr>
+                    <tr>
+                        <td>SAT</td>
+                        <td>Big Bear!</td>
+                    </tr>
+                </table>
+                </ul>
+            </div>
     </div>
-  </div>
-</script>
-    
+    </div>
     <!-- MAIN FOOTER MENU BAR -->
     <footer>
         <div class="menuIcon">
@@ -161,12 +315,11 @@ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.
         <ul>
             <li><strong>WIDGET</strong> MANAGER</li>
             <li id="clockLink"><i class="fa fa-clock-o fa-fw"></i> Clock</li>
-            <li id="todoLink"><i class="fa fa-check-square-o fa-fw"></i>
-Checklist</li>
+            <li id="todoLink"><i class="fa fa-check-square-o fa-fw"></i> Checklist
+            </li>
             <li id="stickyNoteLink"><i class="fa fa-sticky-note-o fa-fw"></i> Sticky Note</li>
-            <li><i class="fa fa-bookmark-o fa-fw"></i>
- Quick Links</li>
-            
+            <li id="bookmarksLink"><i class="fa fa-bookmark-o fa-fw"></i> Quick Links</li>
+
         </ul>
         <div class="mainMenuTRI"></div>
     </menu>

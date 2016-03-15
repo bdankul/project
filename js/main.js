@@ -93,26 +93,24 @@ $(document).ready(function(){
         if(userTask === "") {
             event.preventDefault();
         } else {
-            $('article.todo ul#todoList').prepend('<li><i class="fa-li fa fa-square"></i><p contenteditable="true">' + userTask + '<i class="fa fa-trash-o"></i></p></li>').bind();
+            $('article.todo ul#todoList').prepend('<li><i class="fa-li fa fa-square"></i><p contenteditable="true">' + userTask + '<i class="fa fa-trash-o"></i></p></li>');
             
             task.value = "";
+            $('#task, #addButton').css('visibility','hidden');
         }
         return false;
     }
     
     // click done change li i class
-    $('article.todo ul#todoList i.fa-square').click(
-        function(){
-            // apply css & class changes to next siblings except last
-            $(this).removeClass().addClass('fa-li fa fa-check-square-o').next().css('textDecoration','line-through');
+   
+    // same click for newly prepended events
+    $('article.todo ul#todoList').on('click','li i.fa-square', function (){
+        $(this).removeClass().addClass('fa-li fa fa-check-square-o').next().css('textDecoration','line-through');
             return false;
-            
-        });
-    
+    });
     
     // Trash Icon events
     // hover li p shows icon
-    $('article.todo p i').css('visibility','hidden');
     $('article.todo p').mouseover(
         function(){
             $(this).find('i').css('visibility','visible');
@@ -121,7 +119,15 @@ $(document).ready(function(){
         function(){
             $(this).find('i').css('visibility','hidden');
         });
-    // initial hide
+    
+    
+    // same events for trash ????????????????????????
+    $('article.todo p').on('mouseover','i', function(){
+        $(this).css('visibility','visible');
+        return false;
+    }); // ?????????????????????????????????????????
+    
+    
     // click trash icon delete li
     $('article.todo p i').click(
         function(){
@@ -130,6 +136,82 @@ $(document).ready(function(){
         // ??? above doesnt remove newly added li items
     
     console.log("change icon done");
+    
+    // TODO edit menu
+    $('div#editTodoWrap').hide();
+    $('article.todo menu div.minButton').click(
+        function(){
+            $('div#editTodoWrap').toggle();
+        });
+    
+    //capture bkdColor submit event
+    document.todoBKD.onsubmit = processTodoBkdColor;
+
+    //define process function
+    function processTodoBkdColor() {
+        //store bkdColor in a variable
+        var todoBKDColor = document.todoBKD.todoBKDcolor.value;
+
+        $('article.todo').css('backgroundColor', todoBKDColor);
+        return false;
+    }; //end processTodoBkdColor
+    
+    // BOOKMARKS
+    
+    $('article.bookmarks').hide();
+    
+    $('#linksForm').hide();
+    // add button click show form
+    $('article.bookmarks li#addLink i').click(
+        function(){
+            $('#linksForm').toggle();
+        });
+    
+    // bookmarks add button prepend
+    document.linksForm.onsubmit = newLink;
+    
+    function newLink() {
+        var userLink = document.linksForm.link.value;
+        var userLinkTitle = document.linksForm.title.value;
+        
+        if(userLink === "" || userLinkTitle === "") {
+            event.preventDefault();
+        } else {
+            $('article.bookmarks ul.links').prepend('<li><i class="fa-li fa fa-bookmark-o fa-fw"></i><a href="' + userLink + '" target="_blank">' + userLinkTitle + '</a></li>');
+            
+            link.value = "";
+            title.value = "";
+            $('form#linksForm').hide();
+        }
+        return false;
+    }
+    $('ul.links').sortable();
+    
+    // Bookmark Edit Menu
+    $('div#editBookmarkWrap').hide();
+    $('article.bookmarks menu div.minButton').click(
+        function(){
+            $('div#editBookmarkWrap').toggle();
+        });
+    
+    //capture bkdColor submit event
+    document.bookmarkBKD.onsubmit = processBookmarkBkdColor;
+
+    //define process function
+    function processBookmarkBkdColor() {
+        //store bkdColor in a variable
+        var bookmarkBKDColor = document.bookmarkBKD.bookmarkBKDcolor.value;
+
+        $('article.bookmarks').css('backgroundColor', bookmarkBKDColor);
+        return false;
+    }; //end cf processBkdColor
+    
+    // bookmark close button
+    $('article.bookmarks menu div.closeButton').click(
+        function(){
+            $('article.bookmarks').hide()
+            return false;
+        });
     
     // WIDGET MENU CLICK SHOWS
     
@@ -146,6 +228,11 @@ $(document).ready(function(){
     $('li#clockLink').click(
         function(){
             $('article.clocks').toggle()
+            return false;
+        });
+    $('li#bookmarksLink').click(
+        function(){
+            $('article.bookmarks').toggle()
             return false;
         });
     
@@ -165,15 +252,13 @@ $(document).ready(function(){
 		    }
 		    timedUpdate();
     
-    $('article.clocks').hide()
-        .draggable({
+    $('article.clocks').draggable({
             containment : 'parent'
     });
     
     // CLNDR.JS
-    $('#mini-clndr').draggable({
-        handle : 'div.month',
-        containment : 'window'
+    $('#calWrap').draggable({
+        handle : '#mini-clndr div.month'
     });
     var currentMonth = moment().format('YYYY-MM');
 var nextMonth    = moment().add('month', 1).format('YYYY-MM');
@@ -200,5 +285,17 @@ $('#mini-clndr').clndr({
   },
   adjacentDaysChangeMonth: true
 });
+ 
+    $('div#overview div').hide();
+    $('div#overview h3').click(
+        function(){
+            $(this).next().slideToggle();
+            $(this).children('i').toggleClass('fa-sort-desc');
+        });
+    
+    $('#mini-clndr .clndr .days-container .days .event').click(
+        function(){
+            $('div#clickedEvent').slideToggle();
+        });
     
 }); //end ready
