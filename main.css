@@ -372,7 +372,7 @@ article.todo {
     height: auto;
     right: 30px;
     top: 30px; 
-    background-color: #3f5765;
+    background-color: #587281;
 }
 article.todo menu {
     cursor: move;
@@ -420,9 +420,9 @@ article.todo input[type=submit],article.bookmarks input[type=submit] {
 article.bookmarks {
     width: 300px;
     min-height: 150px;
-    bottom: 70px;
+    top: 70px;
     left: 400px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     background-color: #a38888;
 }
 article.bookmarks ul {
@@ -433,7 +433,6 @@ article.bookmarks ul.links {
     margin-top: 10px;
 }
 article.bookmarks ul.addLink {
-    padding-bottom: 10px;
     color: white;
     font-size: .9em;
 }
